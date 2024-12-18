@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %} Add New Article - Astrum IT Academy H4ck3rs {% endblock %}
+{% block content %}
+         <main>
+            <h2>Add New Article</h2>
+            <form class="article-form"  method="post">
+                {% csrf_token %}
+                <div>
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div>
+                    <label for="category">Category:</label>
+                    <select id="category" name="category" required>
+                        <option value="">Select a category</option>
+                        <option value="exploits">Exploits</option>
+                        <option value="tools">Tools</option>
+                        <option value="ctf">CTF</option>
+                        <option value="tutorials">Tutorials</option>
+                        <option value="news">News</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="short_content">Short Content:</label>
+                    <textarea id="short_content" name="short_content" rows="3" required placeholder="Brief summary or introduction"></textarea>
+                </div>
+                <div>
+                    <label for="long_content">Long Content:</label>
+                    <textarea id="long_content" name="long_content" rows="10" required placeholder="Full article content"></textarea>
+                </div>
+                <div>
+                    <label for="author">Author:</label>
+                    <input type="text" id="author" name="author" required>
+                </div>
+                <div>
+                    <button type="submit" class="submit-button">Submit Article</button>
+                </div>
+            </form>
+        </main>
+{% endblock %}

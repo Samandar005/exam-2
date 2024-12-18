@@ -1,0 +1,489 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&family=Anonymous+Pro:wght@400;700&display=swap');
+
+:root {
+    --bg-color: #0a0a0a;
+    --text-color: #00ff00;
+    --accent-color: #ff00ff;
+    --secondary-bg: #1a1a1a;
+    --header-color: #000000;
+    --code-bg: #000000;
+}
+
+.light-mode {
+    --bg-color: #f0f0f0;
+    --text-color: #1a1a1a;
+    --accent-color: #ff00ff;
+    --secondary-bg: #ffffff;
+    --header-color: #000000;
+    --code-bg: #e0e0e0;  /* O'zgartirildi */
+}
+
+body {
+    font-family: 'Anonymous Pro', monospace;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content-wrap {
+    flex: 1 0 auto;
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow: 0.05em 0 0 var(--accent-color), -0.05em -0.025em 0 #00ff00,
+            -0.025em 0.05em 0 #0000ff;
+    }
+    14% {
+        text-shadow: 0.05em 0 0 var(--accent-color), -0.05em -0.025em 0 #00ff00,
+            -0.025em 0.05em 0 #0000ff;
+    }
+    15% {
+        text-shadow: -0.05em -0.025em 0 var(--accent-color), 0.025em 0.025em 0 #00ff00,
+            -0.05em -0.05em 0 #0000ff;
+    }
+    49% {
+        text-shadow: -0.05em -0.025em 0 var(--accent-color), 0.025em 0.025em 0 #00ff00,
+            -0.05em -0.05em 0 #0000ff;
+    }
+    50% {
+        text-shadow: 0.025em 0.05em 0 var(--accent-color), 0.05em 0 0 #00ff00,
+            0 -0.05em 0 #0000ff;
+    }
+    99% {
+        text-shadow: 0.025em 0.05em 0 var(--accent-color), 0.05em 0 0 #00ff00,
+            0 -0.05em 0 #0000ff;
+    }
+    100% {
+        text-shadow: -0.025em 0 0 var(--accent-color), -0.025em -0.025em 0 #00ff00,
+            -0.025em -0.05em 0 #0000ff;
+    }
+}
+
+header {
+    background-color: var(--header-color);
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header h1 {
+    color: var(--text-color);
+    font-size: 2.5rem;
+    margin: 0;
+    font-weight: 700;
+    animation: glitch 1s linear infinite;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: var(--secondary-bg);
+    padding: 0.5rem;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-weight: 500;
+}
+
+nav a:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.post {
+    background-color: var(--secondary-bg);
+    border-radius: 5px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 10px var(--accent-color);
+    transition: transform 0.3s;
+}
+
+.post:hover {
+    transform: translateY(-5px);
+}
+
+.post h2 {
+    color: var(--accent-color);
+    margin-top: 0;
+}
+
+.post img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.read-more {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-weight: 500;
+}
+
+.read-more:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
+
+.post-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.post-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--accent-color);
+}
+
+.post-content {
+    background-color: var(--secondary-bg);
+    border-radius: 5px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+.comments {
+    background-color: var(--secondary-bg);
+    border-radius: 5px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.comment {
+    background-color: var(--bg-color);
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--accent-color);
+}
+
+.comment-form {
+    margin-top: 2rem;
+    background-color: var(--bg-color);
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid var(--accent-color);
+}
+
+.comment-form h3 {
+    margin-top: 0;
+    color: var(--accent-color);
+}
+
+.comment-form div {
+    margin-bottom: 1rem;
+}
+
+.comment-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.comment-form input,
+.comment-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Anonymous Pro', monospace;
+}
+
+.comment-form textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.comment-form button {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: 500;
+    font-family: 'Anonymous Pro', monospace;
+}
+
+.comment-form button:hover {
+    background-color: var(--text-color);
+}
+
+.related-posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.related-post {
+    background-color: var(--secondary-bg);
+    border-radius: 5px;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid var(--accent-color);
+}
+
+.related-post img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.related-post h3 {
+    margin: 0;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.success-message {
+    background-color: var(--secondary-bg);
+    border-radius: 5px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 10px var(--accent-color);
+    text-align: center;
+}
+
+.success-message h1 {
+    color: var(--accent-color);
+    margin-top: 0;
+}
+
+.success-icon {
+    font-size: 4rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin: 0.5rem;
+    font-weight: 500;
+}
+
+.button:hover {
+    background-color: var(--text-color);
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--secondary-bg);
+    margin-top: 2rem;
+    flex-shrink: 0;
+}
+
+#mode-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Anonymous Pro', monospace;
+    transition: background-color 0.3s;
+    font-weight: 500;
+}
+
+#mode-toggle:hover {
+    background-color: var(--text-color);
+}
+
+code {
+    font-family: 'Fira Code', monospace;
+    background-color: var(--code-bg);
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    color: var(--accent-color);
+}
+
+.light-mode code {
+    color: #1a1a1a;  /* Qo'shildi */
+}
+
+pre {
+    background-color: var(--code-bg);
+    padding: 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    border: 1px solid var(--accent-color);
+    color: var(--text-color);  /* Qo'shildi */
+}
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+    color: inherit;  /* O'zgartirildi */
+}
+
+.terminal {
+    background-color: var(--code-bg);
+    color: var(--text-color);
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    font-family: 'Fira Code', monospace;
+    position: relative;
+}
+
+.terminal::before {
+    content: '$ ';
+    color: var(--accent-color);
+}
+
+.ascii-art {
+    font-family: 'Fira Code', monospace;
+    white-space: pre;
+    font-size: 0.8em;
+    line-height: 1.2;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+/* Add these styles to the end of your existing CSS file */
+
+.article-form {
+    background-color: var(--secondary-bg);
+    padding: 2rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+.article-form div {
+    margin-bottom: 1rem;
+}
+
+.article-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.article-form input,
+.article-form select,
+.article-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Anonymous Pro', monospace;
+}
+
+.article-form textarea {
+    resize: vertical;
+    min-height: 100px; /* Added min-height */
+}
+
+.article-form textarea#short-content {
+    min-height: 60px; /* New style for short-content textarea */
+}
+
+.article-form input[type="text"]::placeholder,
+.article-form textarea::placeholder {
+    color: var(--text-color);
+    opacity: 0.6; /* New placeholder styles */
+}
+
+.submit-button {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: 500;
+    font-family: 'Anonymous Pro', monospace;
+}
+
+.submit-button:hover {
+    background-color: var(--text-color);
+}
+
+.article-list {
+    display: grid;
+    gap: 2rem;
+}
+
+.post-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.post h3 {
+    color: var(--accent-color);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.active {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}

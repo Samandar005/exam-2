@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body class="page-container">
+    <div class="content-wrap">
+        {# HEAD #}
+        {% include 'includes/head.html' %}
+
+        {# NAV #}
+        {% include 'includes/nav.html' %}
+
+        {# CONTENT BLOCK #}
+        {% block content %} {% endblock %}
+    </div>
+
+    {# FOOTER #}
+    {% include 'includes/footer.html' %}
+
+    <button id="mode-toggle">Light Mode</button>
+
+    {# SCRIPTS #}
+    {% include 'includes/scripts.html' %}
+</body>
+</html>

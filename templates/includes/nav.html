@@ -1,0 +1,10 @@
+ <nav>
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'articles:category' 'exploits' %}">Exploits</a>
+      <a href="{% url 'articles:category' 'tools' %}">Tools</a>
+      <a href="{% url 'articles:category' 'ctf' %}">CTF</a>
+      <a href="{% url 'articles:category' 'tutorials' %}">Tutorials</a>
+      <a href="{% url 'articles:category' 'news' %}">News</a>
+
+      <a href="{% url 'articles:create' %}">Add New Article</a>
+ </nav>
