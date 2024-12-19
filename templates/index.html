@@ -2,25 +2,23 @@
 
 {% block title %} Astrum IT Academy H4ck3rs {% endblock %}
 {% block content %}
-        <main>
-            <div class="ascii-art">
+<main>
+    <div class="ascii-art">
  _    _            _             _        _   _
 | |  | |          | |           ( )      | | | |
 | |__| | __ _  ___| | _____ _ __|/ ___   | |_| | __ ___   _____ _ __
 |  __  |/ _` |/ __| |/ / _ \ '__| / __|  |  _  |/ _` \ \ / / _ \ '__|
 | |  | | (_| | (__|   <  __/ |    \__ \  | | | | (_| |\ V /  __/ |
 |_|  |_|\__,_|\___|_|\_\___|_|    |___/  \_| |_/\__,_| \_/ \___|_|
-            </div>
-
-            <article class="post">
-
-                    {% for article in articles %}
-                    <h2>{{ article.title }}</h2>
-                    <p>{{ article.short_content }}</p>
-                    <a href="{{ article.get_detail_url }}" class="read-more">Read More</a>
-                     {% empty %}
-                    <h2>No Found!</h2>
-                    {% endfor %}
-            </article>
-        </main>
+    </div>
+{% for article in articles %}
+    <article class="post">
+        <h2>{{ article.title }}</h2>
+        <p>{{ article.short_content }}</p>
+        <a href="{{ article.get_detail_url }}" class="read-more">Read More</a>
+    </article>
+{% empty %}
+    <h2>No Found!</h2>
+{% endfor %}
+    </main>
 {% endblock %}

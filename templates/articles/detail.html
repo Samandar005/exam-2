@@ -2,48 +2,14 @@
 
 {% block title %} New Zero-day Exploit Discovered in Popular CMS - Astrum IT Academy H4ck3rs {% endblock %}
 {% block content %}
-        <main>
-            <article class="post-content">
-                <div class="post-meta">
-                    <span>Author: {{ article.author }}</span>
-                    <span>Date: {{ article.created_date | date:"Y-m-d" }}</span>
-                </div>
-                <h1>{{ article.title }}</h1>
-                <p>{{ article.short_content }}</p>
-
-                <h2>{{ article.title }}</h2>
-                <p>{{ article.short_content }}</p>
-
-                <div class="terminal">
-                    curl -X POST -F "file=@malicious.php" http://vulnerable-site.com/upload.php
-                </div>
-
-                <h2>Proof of Concept</h2>
-                <p>Here's a simplified version of the vulnerable code:</p>
-                <pre><code>
-&lt;?php
-if ($_FILES['file']['type'] === 'image/jpeg') {
-    $uploaddir = '/var/www/uploads/';
-    $uploadfile = $uploaddir . basename($_FILES['file']['name']);
-    move_uploaded_file($_FILES['file']['tmp_name'], $uploadfile);
-    echo "File is valid, and was successfully uploaded.";
-} else {
-    echo "File is not a valid JPEG.";
-}
-?&gt;
-                </code></pre>
-                <p>The vulnerability lies in the insufficient validation of the file type, which relies solely on the MIME type provided by the client.</p>
-
-                <h2>Impact and Mitigation</h2>
-                <p>The impact of this vulnerability is severe, as it could lead to complete server takeover. To mitigate the risk:</p>
-                <ul>
-                    <li>Update your CMS to the latest version immediately</li>
-                    <li>Implement strong file validation, including content inspection</li>
-                    <li>Use Web Application Firewalls (WAF) to filter malicious requests</li>
-                    <li>Regularly audit your systems for unauthorized changes</li>
-                </ul>
-
-                <p>Remember, responsible disclosure is crucial in the world of cybersecurity. If you discover a vulnerability, always report it to the vendor before making it public.</p>
-            </article>
-        </main>
+<main>
+    <article class="post-content">
+        <div class="post-meta">
+            <span>Author: {{ article.author }}</span>
+            <span>Date: {{ article.created_date | date:"Y-m-d" }}</span>
+        </div>
+            <h1>{{ article.title }}</h1>
+            <p>{{ article.long_content }}</p>
+    </article>
+</main>
 {% endblock %}
