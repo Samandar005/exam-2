@@ -1,11 +1,9 @@
- <nav>
-
-      <a href="{% url 'home' %}">Home</a>
-      <a href="{% url 'articles:category' 'exploits' %} " class="action">Exploits</a>
-      <a href="{% url 'articles:category' 'tools' %}">Tools</a>
-      <a href="{% url 'articles:category' 'ctf' %}">CTF</a>
-      <a href="{% url 'articles:category' 'tutorials' %}">Tutorials</a>
-      <a href="{% url 'articles:category' 'news' %}">News</a>
-
-      <a href="{% url 'articles:create' %}">Add New Article</a>
- </nav>
+<nav>
+    <a href="{% url 'home' %}" class="{% if request.path == '/' %}active{% endif %}">Home</a>
+    <a href="{% url 'articles:category' 'exploits' %}" class="{% if 'exploits' in request.path %}active{% endif %}">Exploits</a>
+    <a href="{% url 'articles:category' 'tools' %}" class="{% if 'tools' in request.path %}active{% endif %}">Tools</a>
+    <a href="{% url 'articles:category' 'ctf' %}" class="{% if 'ctf' in request.path %}active{% endif %}">CTF</a>
+    <a href="{% url 'articles:category' 'tutorials' %}" class="{% if 'tutorials' in request.path %}active{% endif %}">Tutorials</a>
+    <a href="{% url 'articles:category' 'news' %}" class="{% if 'news' in request.path %}active{% endif %}">News</a>
+    <a href="{% url 'articles:create' %}" class="{% if 'create' in request.path %}active{% endif %}">Add New Article</a>
+</nav>
