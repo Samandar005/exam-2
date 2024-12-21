@@ -7,7 +7,6 @@ Article is a dynamic web application for a hacking and technology blog, develope
 ## 🌟 Image
 - ![image](https://github.com/user-attachments/assets/a849145d-fe5f-4ab0-bb2b-a2f10eb343e7)
 
-
 - ![image](https://github.com/user-attachments/assets/4d0cc4d7-ee4c-4442-a853-672b208fc341)
 
 - ![image](https://github.com/user-attachments/assets/49accedb-a157-4d7f-8ec5-ff3f2cb55e0e)
@@ -74,8 +73,8 @@ exam-2/
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/your-username/yoziber.git
-   cd yoziber
+   git clone https://github.com/Samandar005/exam-2.git
+   cd exam-2
    ```
 
 2. Set up virtual environment
